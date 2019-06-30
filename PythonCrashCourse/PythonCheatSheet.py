@@ -14,6 +14,7 @@ class Color:
     UNDERLINE = '\033[4m'
     END = '\033[0m'
 
+
 print(f'{Color.BOLD}Hello! Welcome to python course.{Color.END}')
 print('                                                                         ')
 print(f'{Color.BOLD}==================================={Color.END}')
