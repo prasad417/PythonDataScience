@@ -241,10 +241,3 @@ print(f'''{Color.BOLD}for x in range():
     print(x){Color.END}''')
 print('                                                                         ')
 print('                                                                         ')
-
-x = 'X'
-for i in range(6):
-    if i == 0 or i == 2:
-        print(x * 5)
-    else:
-        print(x * 2)
