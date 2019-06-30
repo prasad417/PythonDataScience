@@ -84,10 +84,10 @@ print(f'{color.BOLD}==================================={color.END}')
 print(f'''{color.BOLD}Data type 'list': [], 
             order is preserved , 
             allows duplicate objects [10, 10], 
-            hetrogenous objects[10, 'list', True], 
+            hetrogenous objects[10, 'list', True],
             growable in nature,
             mutable{color.END}''')
-print('==================================={color.END}')
+print(f'{color.BOLD}==================================={color.END}')
 list = [10, 'a', 20, 'b', 10, True]
 print(f'Type of object is type(o) {list}, {type(list)}')
 print(f'{list}, access list with index list[0], {list[0]}')
@@ -97,6 +97,92 @@ print(f'Address of the object is id(o) {list}, {id(list)}')
 list[0] = 50
 print(f'Assign first index with 50 to {list}')
 print(f'Address of the object is id(o) {list}, {id(list)}')
+print(f'{color.BOLD}==================================={color.END}')
+print(f'''{color.BOLD}Data type 'tuple': (), 
+            order is preserved , 
+            allows duplicate objects [10, 10], 
+            hetrogenous objects[10, 'list', True],
+            immutable
+            single value tuple should end with ','{color.END}''')
+print(f'{color.BOLD}==================================={color.END}')
+tupleDataType = (10, 'a', 20, 'b', 10, True)
+print(f'Type of object is type(o) {tupleDataType}, {type(tupleDataType)}')
+print(f'{tupleDataType}, access tuple with index tuple[0], {tupleDataType[0]}')
+print(f'{tupleDataType}, slice tuple with index tuple[0: 3], {tupleDataType[0: 3]}')
+print(f'{tupleDataType}, slice tuple with index tuple[-1], {tupleDataType[-1]}')
+print(f'Address of the object is id(o) {tupleDataType}, {id(tupleDataType)}')
+print(f'{color.BOLD}==================================={color.END}')
+print(f'''{color.BOLD}Data type 'set': 
+            order is not preserved , 
+            duplicate objects not allowed, 
+            hetrogenous objects[10, 'list', True],
+            mutable,
+            growable in nature,
+            indexing/slicing not applicable{color.END}''')
+print(f'{color.BOLD}==================================={color.END}')
+setDataType = {20, 'a', 20, 'b', 10, True}
+print(f'Type of object is type(o) {setDataType}, {type(setDataType)}')
+print('Defining empty set s = set()')
+print(f'Address of the object is id(o) {setDataType}, {id(setDataType)}')
+print(f'{color.BOLD}==================================={color.END}')
+print(f'''{color.BOLD}Data type 'frozenset': 
+            order is not preserved , 
+            duplicate objects not allowed, 
+            hetrogenous objects[10, 'list', True],
+            immutable,
+            indexing/slicing not applicable{color.END}''')
+print(f'{color.BOLD}==================================={color.END}')
+frozenSetDataType = frozenset(setDataType)
+print(f'Type of object is type(o) {frozenSetDataType}, {type(frozenSetDataType)}')
+print('Defining frozen set s = frozenset(set)')
+print(f'Address of the object is id(o) {setDataType}, {id(setDataType)}')
+print(f'{color.BOLD}==================================={color.END}')
+print(f'''{color.BOLD}Data type 'dict': 
+            key-value pair,
+            duplicate keys not allowed, old value is replaced with new value,
+            order not preserved,
+            hetrogenous objects,
+            mutable,
+            indexing/slicing not applicable{color.END}''')
+print(f'{color.BOLD}==================================={color.END}')
+dic = {}
+dic[100] = 'Prasad'
+dic[200] = 'Ramya'
+dic[300] = 'Prayan'
+print(f'Type of object is type(o) {dic}, {type(dic)}')
+print(dic)
+print(f'{color.BOLD}==================================={color.END}')
+print(f'''{color.BOLD}Data type 'range':
+            sequence of numbers,
+            order preserved,
+            indexing/slicing applicable,
+            immutable,
+            range(n) = 0 to n-1, r = range(10) 0 to 9
+            range(begin, end) = begin to end-1, r = range(1, 10) 1 to 9
+            range(begin, end, increment/decrement), r = range(1, 21, 1){color.END}''')
+print(f'{color.BOLD}==================================={color.END}')
+r = range(1, 21, 2)
+print(f'Type of object is type(o) {r}, {type(r)}')
+print(f'{color.BOLD}==================================={color.END}')
+print(f'''{color.BOLD}Data type 'bytes':
+            b = bytes(10, 20),
+            range must be from 0 to 255,
+            indexing/slicing applicable,
+            immutable{color.END}''')
+print(f'{color.BOLD}==================================={color.END}')
+b = bytes(10)
+print(f'Type of object is type(o) {b}, {type(b)}')
+print(f'{color.BOLD}==================================={color.END}')
+print(f'''{color.BOLD}Data type 'bytearray': 
+            b = bytearray(10),
+            range must be from 0 to 255,
+            indexing/slicing applicable,
+            mutable{color.END}''')
+print(f'{color.BOLD}==================================={color.END}')
+l = [10, 20, 30]
+ba = bytearray(l)
+print(f'Type of object is type(o) {ba}, {type(ba)}')
+print(ba[0])
 print('                                                                         ')
 print('                                                                         ')
 print(f'{color.BOLD}==================================={color.END}')
