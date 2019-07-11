@@ -8,6 +8,7 @@ myUrl = {
     # 'https://en.wikipedia.org/wiki/Akkineni_Nagarjuna_filmography',
     # 'https://en.wikipedia.org/wiki/Krishna_filmography',
     # 'https://en.wikipedia.org/wiki/Mahesh_Babu_filmography',
+    'https://en.wikipedia.org/wiki/Vijay_Deverakonda'
     #
     # 'https://en.wikipedia.org/wiki/Rajinikanth_filmography',
     # 'https://en.wikipedia.org/wiki/Kamal_Haasan_filmography',
@@ -27,10 +28,11 @@ myUrl = {
     #
     # 'https://en.wikipedia.org/wiki/Tom_Cruise_filmography',
     # 'https://en.wikipedia.org/wiki/Nicolas_Cage_filmography',
-    'https://en.wikipedia.org/wiki/Bruce_Willis_filmography'
+    #'https://en.wikipedia.org/wiki/Bruce_Willis_filmography'
 }
 
-movieLinks = set()
+movies = {}
+moviesLinks = set()
 wikiUrl = 'https://en.wikipedia.org'
 
 
@@ -50,16 +52,20 @@ for url in myUrl:
     # XML parser
     # HTML.parser
 
-    soup = BeautifulSoup(page.text, 'html.parser')
-    links = soup.select('.wikitable.sortable tbody tr i a')
+    soupParser = BeautifulSoup(page.text, 'lxml')
+    rows = soupParser.select('.wikitable.sortable tbody tr')
 
-    for link in links:
-        if str(link).find('/wiki/') >= 1:
-            href = wikiUrl+link.attrs['href']
-            # title = link.attrs['title']
-            movieLinks.add(href)
+    for tr in rows:
+        links = tr.select('td i a')
+        for a in links:
+            if (str(a['title']).find('page does not exist') < 0) and (len(str(a['href'])) > 0):
+                movieUrl = wikiUrl + a['href']
+                movies[a['title']] = movieUrl
+                moviesLinks.add(movieUrl)                
+json_string = json.dumps(movies, indent=4)
+print(json_string)
+print(moviesLinks)
 
-print(movieLinks)
 for movieLink in movieLinks:
     page = get_response(wikiUrl+href)
     soup = BeautifulSoup(page.text, 'html.parser')
