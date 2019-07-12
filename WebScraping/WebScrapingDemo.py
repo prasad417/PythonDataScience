@@ -2,38 +2,40 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
-myUrl = {
-    # 'https://en.wikipedia.org/wiki/Venkatesh_Daggubati_filmography',
-    # 'https://en.wikipedia.org/wiki/Chiranjeevi_filmography',
-    # 'https://en.wikipedia.org/wiki/Akkineni_Nagarjuna_filmography',
-    # 'https://en.wikipedia.org/wiki/Krishna_filmography',
-    # 'https://en.wikipedia.org/wiki/Mahesh_Babu_filmography',
+myUrl = [
+    'https://en.wikipedia.org/wiki/Venkatesh_Daggubati_filmography',
+    'https://en.wikipedia.org/wiki/Chiranjeevi_filmography',
+    'https://en.wikipedia.org/wiki/Akkineni_Nagarjuna_filmography',
+    'https://en.wikipedia.org/wiki/Krishna_filmography',
+    'https://en.wikipedia.org/wiki/Mahesh_Babu_filmography',
     'https://en.wikipedia.org/wiki/Vijay_Deverakonda'
-    #
-    # 'https://en.wikipedia.org/wiki/Rajinikanth_filmography',
-    # 'https://en.wikipedia.org/wiki/Kamal_Haasan_filmography',
-    # 'https://en.wikipedia.org/wiki/Vikram_filmography',
-    # 'https://en.wikipedia.org/wiki/Vijay_filmography',
-    # 'https://en.wikipedia.org/wiki/Ajith_Kumar_filmography',
-    #
-    # 'https://en.wikipedia.org/wiki/Mammootty_filmography',
-    # 'https://en.wikipedia.org/wiki/Mohanlal_filmography',
-    # 'https://en.wikipedia.org/wiki/Suresh_Gopi_filmography',
-    #
-    # 'https://en.wikipedia.org/wiki/Shah_Rukh_Khan_filmography',
-    # 'https://en.wikipedia.org/wiki/Salman_Khan_filmography',
-    # 'https://en.wikipedia.org/wiki/Aamir_Khan_filmography',
-    # 'https://en.wikipedia.org/wiki/Sanjay_Dutt_filmography',
-    # 'https://en.wikipedia.org/wiki/Akshay_Kumar_filmography',
-    #
-    # 'https://en.wikipedia.org/wiki/Tom_Cruise_filmography',
-    # 'https://en.wikipedia.org/wiki/Nicolas_Cage_filmography',
-    #'https://en.wikipedia.org/wiki/Bruce_Willis_filmography'
-}
 
-movies = {}
-moviesLinks = set()
+    'https://en.wikipedia.org/wiki/Rajinikanth_filmography',
+    'https://en.wikipedia.org/wiki/Kamal_Haasan_filmography',
+    'https://en.wikipedia.org/wiki/Vikram_filmography',
+    'https://en.wikipedia.org/wiki/Vijay_filmography',
+    'https://en.wikipedia.org/wiki/Ajith_Kumar_filmography',
+
+    'https://en.wikipedia.org/wiki/Mammootty_filmography',
+    'https://en.wikipedia.org/wiki/Mohanlal_filmography',
+    'https://en.wikipedia.org/wiki/Suresh_Gopi_filmography',
+
+    'https://en.wikipedia.org/wiki/Shah_Rukh_Khan_filmography',
+    'https://en.wikipedia.org/wiki/Salman_Khan_filmography',
+    'https://en.wikipedia.org/wiki/Aamir_Khan_filmography',
+    'https://en.wikipedia.org/wiki/Sanjay_Dutt_filmography',
+    'https://en.wikipedia.org/wiki/Akshay_Kumar_filmography',
+
+    'https://en.wikipedia.org/wiki/Tom_Cruise_filmography',
+    'https://en.wikipedia.org/wiki/Nicolas_Cage_filmography',
+    'https://en.wikipedia.org/wiki/Bruce_Willis_filmography'
+]
+
+actorName = ''
+movies = []
+moviesLinks = []
 wikiUrl = 'https://en.wikipedia.org'
+
 
 
 def get_response(page_url):
@@ -53,21 +55,29 @@ for url in myUrl:
     # HTML.parser
 
     soupParser = BeautifulSoup(page.text, 'lxml')
+    # soupParser = BeautifulSoup(open('vd.html'), 'lxml')
+    actorName = soupParser.select('h1.firstHeading')[0].text
     rows = soupParser.select('.wikitable.sortable tbody tr')
 
     for tr in rows:
         links = tr.select('td i a')
         for a in links:
-            if (str(a['title']).find('page does not exist') < 0) and (len(str(a['href'])) > 0):
+            if len(str(a['href'])) > 0:
                 movieUrl = wikiUrl + a['href']
-                movies[a['title']] = movieUrl
-                moviesLinks.add(movieUrl)                
-json_string = json.dumps(movies, indent=4)
-print(json_string)
-print(moviesLinks)
+                # movies[a['title']] = movieUrl
+                moviesLinks.append(movieUrl)
+# json_string = json.dumps(movies, indent=4)
+# print(json_string)
+    moviesLinks = [actorName, moviesLinks]
+    movies.append(moviesLinks)
+    moviesLinks = []
+# print(movies)
+file = open('print.txt', 'w')
+file.write(str(movies))
+file.close()
 
-for movieLink in movieLinks:
-    page = get_response(wikiUrl+href)
-    soup = BeautifulSoup(page.text, 'html.parser')
-    movieInfo = soup.select('.infobox.vevent tr', 'html.parser')
-    print()
+# for movieLink in movieLinks:
+#     page = get_response(wikiUrl+href)
+#     soup = BeautifulSoup(page.text, 'html.parser')
+#     movieInfo = soup.select('.infobox.vevent tr', 'html.parser')
+#     print()

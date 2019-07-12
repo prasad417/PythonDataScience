@@ -1,5 +1,6 @@
 import keyword
 from utils.Color import Color
+from datetime import date
 
 print(f'{Color.BOLD}Hello! Welcome to python course.{Color.END}')
 print('                                                                         ')
@@ -13,7 +14,8 @@ print(f'{Color.BOLD}==================================={Color.END}')
 print(f'{Color.BOLD}Python has 14 Data Types{Color.END}')
 print(f'{Color.BOLD}==================================={Color.END}')
 print(f'''{Color.BOLD}Fundamental data types:{Color.END} 'int', 'float', 'complex', 'bool', 'str' ''')
-print(f'''{Color.BOLD}Collection related data types:{Color.END} 'list', 'tuple', 'set', 'frozenset', 'dict', 'bytes', 'bytearray', 'range' ''')
+print(
+    f'''{Color.BOLD}Collection related data types:{Color.END} 'list', 'tuple', 'set', 'frozenset', 'dict', 'bytes', 'bytearray', 'range' ''')
 print(f'{Color.BOLD}Other data types: {Color.END}None')
 print('                                                                         ')
 print('                                                                         ')
@@ -57,18 +59,20 @@ print(f'Type of object is type(o) {type(isEnergySaver)}, {isEnergySaver}')
 print(f'{Color.BOLD}==================================={Color.END}')
 print(f'{Color.BOLD}Data type \'complex\' immutable')
 print(f'{Color.BOLD}==================================={Color.END}')
-print(f'Type of object is type(o) {type(complexNumberFormat)}, real part of {complexNumberFormat}', complexNumberFormat.real)
-print(f'Type of object is type(o) {type(complexNumberFormat)}, imaginary part of {complexNumberFormat}', complexNumberFormat.imag)
+print(f'Type of object is type(o) {type(complexNumberFormat)}, real part of {complexNumberFormat}',
+      complexNumberFormat.real)
+print(f'Type of object is type(o) {type(complexNumberFormat)}, imaginary part of {complexNumberFormat}',
+      complexNumberFormat.imag)
 print(f'Defining complex(10, 10.2) is {complex(10, 10.2)}')
 print(f'Defining complex with string only takes real part, complex("10") is {complex("10")}')
 print(f'Defining complex(25) is {complex(25)}')
-#print(f'{color.BOLD}==================================={color.END}')
-#print(f'{color.BOLD}Input from user{color.END}')
-#print(f'{color.BOLD}==================================={color.END}')
-#userName = input('What is your name?')
-#print('Welcome ', userName)
-#print('                                                                         ')
-#print('                                                                         ')
+# print(f'{color.BOLD}==================================={color.END}')
+# print(f'{color.BOLD}Input from user{color.END}')
+# print(f'{color.BOLD}==================================={color.END}')
+# userName = input('What is your name?')
+# print('Welcome ', userName)
+# print('                                                                         ')
+# print('                                                                         ')
 print(f'{Color.BOLD}==================================={Color.END}')
 print(f'''{Color.BOLD}Data type 'list': [], 
             order is preserved , 
@@ -227,3 +231,18 @@ print(f'''{Color.BOLD}for x in range():
     print(x){Color.END}''')
 print('                                                                         ')
 print('                                                                         ')
+
+
+# birthday = input('Enter birthday in yyyy/mm/dd: ')
+# year, month, day = map(int, birthday.split('/'))
+# try:
+#     birthday = date(year, month, day)
+# except ValueError:
+#     print('Day is out of range for month')
+# currentDate = date.today()
+#
+# if birthday <= currentDate:
+#     print((currentDate - birthday).days)
+# else:
+#     print('Enter birthdate in yyyy/mm/dd fo')
+
