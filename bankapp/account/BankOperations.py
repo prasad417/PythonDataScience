@@ -1,10 +1,10 @@
 from abc import ABC, abstractmethod
 
 
-class Bank(ABC):
+class BankOperations(ABC):
 
     @abstractmethod
-    def create_bank_account(self):
+    def open_bank_account(self):
         pass
 
     @abstractmethod

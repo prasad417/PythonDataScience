@@ -1,13 +1,13 @@
-from bankapp.account.Bank import Bank
+from bankapp.account.BankOperations import BankOperations
 import uuid
 
 
-class BankAccount(Bank):
+class BankAccount(BankOperations):
     def __init__(self, bank_account_type):
         self.balance = 0
         self.bank_account_type = bank_account_type
 
-    def create_bank_account(self):
+    def open_bank_account(self):
         bank_account_no = uuid.uuid4().hex.upper()
         print(f'New {self.bank_account_type} created. Account number is: {bank_account_no}')
         return bank_account_no
