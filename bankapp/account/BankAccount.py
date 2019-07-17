@@ -3,14 +3,13 @@ import uuid
 
 
 class BankAccount(BankOperations):
-    def __init__(self, bank_account_type):
+
+    def __init__(self, bank_customer):
         self.balance = 0
-        self.bank_account_type = bank_account_type
+        self.bank_customer = bank_customer
 
     def open_bank_account(self):
-        bank_account_no = uuid.uuid4().hex.upper()
-        print(f'New {self.bank_account_type} created. Account number is: {bank_account_no}')
-        return bank_account_no
+        self.bank_customer.customer_account.bank_account_number = uuid.uuid4().hex.upper()
 
     def deposit_to_bank_account(self):
         amount = float(input("Enter amount to be deposited: "))
@@ -24,3 +23,6 @@ class BankAccount(BankOperations):
             print("\n You Withdrew:", amount)
         else:
             print("\n Insufficient funds.")
+
+    def transfer_from_bank_account(self):
+        pass

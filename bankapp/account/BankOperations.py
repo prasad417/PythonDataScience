@@ -14,3 +14,7 @@ class BankOperations(ABC):
     @abstractmethod
     def withdraw_from_bank_account(self):
         pass
+
+    @abstractmethod
+    def transfer_from_bank_account(self):
+        pass

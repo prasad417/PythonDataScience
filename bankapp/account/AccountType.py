@@ -9,3 +9,4 @@ class AccountType(Enum):
     BUSINESS_CHECKING_ACCOUNT = auto()
     PERSONAL_CREDIT_CARD_ACCOUNT = auto()
     BUSINESS_CREDIT_CARD_ACCOUNT = auto()
+    MONEY_MARKET = auto()
