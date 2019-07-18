@@ -1,4 +1,4 @@
-class CustomerIdentification:
+class Identification:
 
     def __init__(self, identification_no, identification_exp_date, ssn):
         self.identification_no = identification_no

@@ -1,4 +1,4 @@
-class CustomerPersonalInformation:
+class PersonalInformation:
 
     def __init__(self, first_name, middle_name, last_name, date_of_birth, email, phone, gender):
         self.first_name = first_name
