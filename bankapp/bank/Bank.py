@@ -8,11 +8,8 @@ class Bank:
     # bank_name
     # bank_routing_number Int
     # bank_address Address
+    # get_bank_details()
     # show_bank_routing_number()
-    # add_account()
-    # remove_account()
-    # add_customer()
-    # remove_customer()
 
     def __init__(self):
         self.bank_name = 'Test Bank'
@@ -33,23 +30,6 @@ class Bank:
     def get_bank_address(self):
         print(vars(self.bank_address))
 
-    def add_account(self, account_type, account_number):
-        self.accounts[account_number] = account_type
-
-    def remove_account(self):
-        pass
-
-    def get_all_accounts(self):
-        print(self.accounts)
-
-    def add_customer(self, customer_id):
-        self.customers.add(customer_id)
-
-    def remove_customer(self):
-        pass
-
-    def get_all_customers(self):
-        print(self.customers)
     # @property
     # def bank_name(self):
     #     return self.__bank_name

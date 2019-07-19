@@ -1,6 +1,6 @@
 import uuid
 
-from bankapp.bankcustomer.Account import Account
+from bankapp.bankcustomer.CustomerBankAccount import CustomerBankAccount
 
 
 class Customer:
@@ -36,3 +36,17 @@ class Customer:
 
     def get_customer_id(self):
         print(self.id)
+
+    def open_bank_account(self, bank_account_instance):
+        bank_account = CustomerBankAccount(bank_account_instance.bank_account_type, bank_account_instance.bank_account_number,
+                                           bank_account_instance.bank_account_status)
+        self.accounts.append(bank_account)
+
+    def close_bank_account(self):
+        pass
+
+    def add_account(self):
+        pass
+
+    def remove_account(self):
+        pass
