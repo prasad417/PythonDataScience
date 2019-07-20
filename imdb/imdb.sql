@@ -1,3 +1,5 @@
+-- /usr/local/mysql/bin/mysqldump -u sqladmin -p --databases imdb > imdb_07202019_backup.sql
+
 -- SHOW VARIABLES LIKE "secure_file_priv";
 
 -- SELECT @@GLOBAL.secure_file_priv;
