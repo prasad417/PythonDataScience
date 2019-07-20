@@ -103,19 +103,25 @@
 -- SELECT COUNT(tconst) FROM `title.principals`;
 
 SELECT * FROM imdb.`name.basics` 
-WHERE primaryName IN ('Taraka Rama Rao Nandamuri', 'Akkineni Nageshwara Rao', 'S.V. Ranga Rao', 'Krishna Ghattamanen', 'Venkatesh Daggubati', 'Chiranjeevi', 'Mahesh Babu', 'Pawan Kalyan', 'N.T. Rama Rao Jr.', 'Nandamuri Balakrishna', 'Allu Arjun', 'Nagarjuna Akkineni',
- 'Prabhas', 'Ravi Teja', 'Nani', ' Nikhil Siddharth', 'Rana Daggubati', 'Ram Charan', 'Jagapathi Babu', 'Nithiin', 'Naga Chaitanya Akkineni', 'Sharvanand', 'Allari Naresh',
- 'Tottempudi Gopichand', 'Ram Pothineni', 'Ram Pothineni', 'Varun Tej', 'Sai Dharam Tej', ' Sumanth', 'Akhil Akkineni', 'Vishnu Manchu', 'Manoj Kumar Manchu',
- 'Sai Srinivas Bellamkonda', 'Nara Rohith', 'Mohan Babu', 'Naga Shaurya', 'Sundeep Kishan', 'Varun Sandesh', 'Kalyan Ram', 'Aadi', 'Rajendra Prasad', 'Allu Sirish',
- ' Vijay Deverakonda', ' Adivi Sesh', 'Satyanarayana Kaikala', 'Sobhan Babu', 'Krishnamraju', 'Uday Kiran', 'Venu Thottempudi', 'Vennela Kishore', 'Gummadi', 'Ali',
- 'Brahmanandam', 'J.D. Chakravarthi', ' J.V. Somayajulu', 'Sumanth', 'Navdeep', 'Prakash Raj') 
-AND primaryProfession LIKE 'actor%'
+WHERE primaryName IN ('Aadi Pudipeddi', 'Adivi Sesh', 'Akhil Akkineni', 'Akkineni Nageshwara Rao', 'Ali Basha Mohammad', 'Allari Naresh', 'Allu Arjun', 'Allu Sirish',
+ 'Brahmanandam', 'Chiranjeevi Konidela', 'Gopichand Tottempudi', 'Gummadi Venkateswara Rao', 'J.D. Chakravarthi', 'J.V. Somayajulu', 'Jagapathi Babu', 'Kalyan Ram',
+ 'Krishna Ghattamaneni', 'Krishnamraju', 'Mahesh Babu Ghattamaneni', 'Manoj Kumar Manchu', 'Mohan Babu Manchu', 'N.T. Rama Rao Jr.', 'Naga Chaitanya Akkineni', 'Naga Shaurya',
+ 'Nagarjuna Akkineni', 'Nandamuri Balakrishna', 'Nani Ghanta', 'Nara Rohith', 'Navdeep Pallapolu', 'Nikhil Siddharth', 'Nithiin Kumar Reddy',
+ 'Pawan Kalyan Konidela', 'Prabhas Raju Uppalapati', 'Prakash Raj',
+ 'Rajendra Prasad Gadde', 'Ram Charan Konidela', 'Ram Pothineni',  'Rana Daggubati', 'Ravi Teja Bhupatiraju', 'S.V. Ranga Rao',
+ 'Sai Dharam Tej', 'Sai Srinivas Bellamkonda', 'Satyanarayana Kaikala', 'Sharvanand Myneni', 'Sobhan Babu Uppu', 'Srikanth Meka', 'Sumanth Yarlagadda', 'Sundeep Kishan',
+ 'Taraka Rama Rao Nandamuri', 'Uday Kiran', 'Varun Sandesh', 'Varun Tej',  'Venkatesh Daggubati', 'Vennela Kishore Bokkala', 'Venu Thottempudi', 'Vijay Deverakonda',
+ 'Vishnu Manchu'
+ ) 
+AND primaryProfession LIKE '%actor%'
 ORDER BY primaryName ASC;
 
 SELECT * FROM imdb.`name.basics` 
-WHERE primaryName IN ('Rajinikanth', 'Kamal Haasan', 'Ajith Kumar', 'Joseph Vijay', 'Suriya', 'Vikram', 'Dhanush', 'Karthi', 'Vishal', 'Jiiva', 'Arya', 'Siddharth', 'Madhavan', 
-'Srikanth', 'Jayam Ravi', 'T.R. Silambarasan', 'Arvind Swamy', 'Arjun Sarja', 'Prabhu', 'Prabhu Deva', 'Vijayakanth', 'Sathyaraj', 'Sarath Kumar', 'Raj Kiran') 
-AND primaryProfession LIKE 'actor%'
+WHERE primaryName IN ('Rajinikanth Gaekwad', 'Kamal Haasan', 'Ajith Kumar P', 'Joseph Vijay', 'Suriya Sivakumar', 'Vikram Chiyaan', 'Dhanush', 'Karthi Sivakumar',
+'Vishal Krishna Reddy', 'Jiiva Amar Choudary', 'Arya Jamshad Cethirakath', 'Siddharth Suryanarayan', 'Madhavan Ranganathan','Jayam Ravi', 'T.R. Silambarasan',
+'Arvind Swamy', 'Arjun Sarja', 'Prabhu Ganesan', 'Prabhu Deva Sundar', 'Vijayakanth', 'Sathyaraj', 'Sarath Kumar Ramanathan', 'Rajkiran Mohideen Abdul Khadar',
+'Lawrence Raghavendra') 
+AND primaryProfession LIKE '%actor%'
 ORDER BY primaryName ASC;
 
 SELECT * FROM imdb.`name.basics` 
