@@ -98,6 +98,25 @@
 -- LINES TERMINATED BY '\n';
 -- -- IGNORE 1 ROWS;
 
+-- CREATE TABLE `name.principals` (
+--   `nconst` text,
+--   `primaryName` text,
+--   `birthYear` text,
+--   `deathYear` text,
+--   `primaryProfession` text,
+--   `knownForTitles` text,
+--   `tconst` text,
+--   `ordering` text,
+--   `category` text,
+--   `job` text,
+--   `characters` text
+-- );
+
+-- LOAD DATA INFILE '/Users/prasaddy/mysql/name.principals.csv' 
+-- INTO TABLE `name.principals`
+-- FIELDS TERMINATED BY '\t' 
+-- LINES TERMINATED BY '\n';
+
 -- SELECT COUNT(nconst) FROM `name.basics`;
 -- SELECT COUNT(titleid) FROM `title.akas`;
 -- SELECT COUNT(tconst) FROM `title.basics`;
