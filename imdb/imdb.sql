@@ -117,6 +117,50 @@
 -- FIELDS TERMINATED BY '\t' 
 -- LINES TERMINATED BY '\n';
 
+-- CREATE TABLE `na.pr.crew` (
+--   `tconst` text,
+--   `directors` text,
+--   `writers` text,
+--   `nconst` text,
+--   `primaryName` text,
+--   `birthYear` text,
+--   `deathYear` text,
+--   `primaryProfession` text,
+--   `knownForTitles` text,
+--   `ordering` text,
+--   `category` text,
+--   `job` text,
+--   `characters` text
+-- );
+
+-- LOAD DATA INFILE '/Users/prasaddy/mysql/na.pr.crew.csv' 
+-- INTO TABLE `na.pr.crew`
+-- FIELDS TERMINATED BY '\t' 
+-- LINES TERMINATED BY '\n';
+
+-- CREATE TABLE `npc.ratings` (
+--   `tconst` text,
+--   `directors` text,
+--   `writers` text,
+--   `nconst` text,
+--   `primaryName` text,
+--   `birthYear` text,
+--   `deathYear` text,
+--   `primaryProfession` text,
+--   `knownForTitles` text,
+--   `ordering` text,
+--   `category` text,
+--   `job` text,
+--   `characters` text,
+--   `averageRating` text,
+--   `numVotes` text
+-- );	
+
+-- LOAD DATA INFILE '/Users/prasaddy/mysql/npc.ratings.csv' 
+-- INTO TABLE `npc.ratings`
+-- FIELDS TERMINATED BY '\t' 
+-- LINES TERMINATED BY '\n';
+
 -- SELECT COUNT(nconst) FROM `name.basics`;
 -- SELECT COUNT(titleid) FROM `title.akas`;
 -- SELECT COUNT(tconst) FROM `title.basics`;
