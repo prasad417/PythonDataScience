@@ -161,6 +161,45 @@
 -- FIELDS TERMINATED BY '\t' 
 -- LINES TERMINATED BY '\n';
 
+-- CREATE TABLE `movies` (
+--   `tconst` text,
+--   `titleType` text,
+--   `primaryTitle` text,
+--   `originalTitle` text,
+--   `isAdult` text,
+--   `startYear` text,
+--   `endYear` text,
+--   `runtimeMinutes` text,
+--   `genres` text,
+--   `titleid` text,
+--   `ordering_x` text,
+--   `title` text,
+--   `region` text,
+--   `languages` text,
+--   `types` text,
+--   `attributes` text,
+--   `isOriginalTitle` text,
+--   `directors` text,
+--   `writers` text,
+--   `nconst` text,
+--   `primaryName` text,
+--   `birthYear` text,
+--   `deathYear` text,
+--   `primaryProfession` text,
+--   `knownForTitles` text,
+--   `ordering_y` text,
+--   `category` text,
+--   `job` text,
+--   `characters` text,
+--   `averageRating` text,
+--   `numVotes` text
+-- );	
+
+-- LOAD DATA INFILE '/Users/prasaddy/mysql/movies.csv' 
+-- INTO TABLE `movies`
+-- FIELDS TERMINATED BY '\t' 
+-- LINES TERMINATED BY '\n';
+
 -- SELECT COUNT(nconst) FROM `name.basics`;
 -- SELECT COUNT(titleid) FROM `title.akas`;
 -- SELECT COUNT(tconst) FROM `title.basics`;
