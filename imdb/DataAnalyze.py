@@ -79,4 +79,8 @@ print(datetime.datetime.now())
 print(v)
 # Select only 2 columns from dataFrame and create a new subset DataFrame
 # columnsData = dfObj.loc[ : , ['Age', 'Name'] ]
+
+#nb = pd.read_csv('./csvfiles/name.basics.csv', sep='\t', encoding='utf8')
+#nb_cl = nb[['nconst', 'primaryName', 'primaryProfession']]
+#nb_cl.to_json(r'./csvfiles/nb.json', orient='records')
 print('Test')
