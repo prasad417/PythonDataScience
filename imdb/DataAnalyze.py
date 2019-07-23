@@ -1,4 +1,6 @@
 import pandas as pd
+import  datetime
+import numpy as np
 
 # nb = pd.read_csv('./csvfiles/name.basics.csv', sep='\t', encoding='utf8')
 # tp = pd.read_csv('./csvfiles/title.principals.csv', sep='\t', encoding='utf8')
@@ -29,4 +31,13 @@ import pandas as pd
 # npcr = pd.read_csv('./csvfiles/npc.ratings.csv', sep='\t', encoding='utf8')
 # movies = pd.merge(title, npcr, on='tconst', how='inner')
 # movies.to_csv('./csvfiles/movies.csv', sep='\t', encoding='utf-8', index=False)
+
+print(datetime.datetime.now())
+mv = pd.read_csv('./csvfiles/movies.csv', sep='\t', encoding='utf8')
+# v = mv[mv.primaryName.isin(['Venkatesh Daggubati'])]
+v = mv[np.isin(mv['primaryName'], ['Venkatesh Daggubati'])]
+print(datetime.datetime.now())
+print(v)
+# Select only 2 columns from dataFrame and create a new subset DataFrame
+# columnsData = dfObj.loc[ : , ['Age', 'Name'] ]
 print('Test')
