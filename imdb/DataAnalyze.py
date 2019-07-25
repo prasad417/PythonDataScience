@@ -75,6 +75,7 @@ actor_list = [
 mv = pd.read_csv('./csvfiles/movies.csv', sep='\t', encoding='utf8')
 # v = mv[mv.primaryName.isin(['Venkatesh Daggubati'])]
 v = mv[np.isin(mv['primaryName'], actor_list)]
+v.to_json(r'./csvfiles/nb.json', orient='records')
 print(datetime.datetime.now())
 print(v)
 # Select only 2 columns from dataFrame and create a new subset DataFrame
@@ -84,3 +85,4 @@ print(v)
 #nb_cl = nb[['nconst', 'primaryName', 'primaryProfession']]
 #nb_cl.to_json(r'./csvfiles/nb.json', orient='records')
 print('Test')
+
